@@ -1,0 +1,45 @@
+{
+  "name": "costume-designier",
+  "version": "0.0.1",
+  "description": "costume-designier",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s530479-ShivaKumar/GDP-1Group4_Section2"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "bcryptjs": "*",
+    "body-parser": "latest",
+    "chai": "^4.2.0",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "dropdown-select": "^3.1.0",
+    "ejs": "latest",
+    "express": "latest",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mailgun-js": "latest",
+    "mongodb": "^3.1.4",
+    "mongoose": "^5.3.12",
+    "morgan": "latest",
+    "nodemailer": "^4.6.8",
+    "nodemon": "^1.18.4",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "passport-local-mongoose": "^5.0.1",
+    "randomstring": "^1.1.5",
+    "request": "^2.88.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}

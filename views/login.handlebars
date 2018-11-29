@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <link rel="stylesheet" type="text/css" href="/css/login.css" />
+
+</head>
+
+<body>
+
+
+  <img src="/css/pic.jpg" class="img-responsive" alt="Cinque Terre" width="200" height="200">
+  <form method="post" action="/users/login">
+
+
+    <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder=" Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <button type="submit">Login</button>
+
+    </div>
+  </form>
+  <div class="container">
+    <div class="reset">
+      <a href="resetpassword" class="btn btn-danger">Forgot Password</a>
+    </div>
+    <div class="reset">
+      <a href="forgotusername" class="btn btn-warning">Forgot Username</a>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
