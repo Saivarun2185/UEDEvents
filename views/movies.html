@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Movies Available
+        </title>
+        <style>
+        img{
+            width:220px;
+            height:220px;
+        }
+        
+        th{
+            font-size: 2em;
+            background-color: blue;
+            padding: 20px;
+        }
+        body{
+            font-family: sans-serif;
+            font-size: 1em;
+            text-align: center;
+        }
+        table{
+            background-color: white;
+            width: 60%;
+        }
+        td{
+            padding: 25px;
+        }
+        .textimage{
+            position:relative;
+            width:250px;
+            height:250px;
+            float:left;
+            background-size: 100%;
+            background-position: center;
+            margin:4px;
+            background-size:100%;
+            transition:0.5s;
+            text-align:left;
+        }
+        .textimage:hover{
+            background-size: 110%;
+        }
+        .textimage:after{
+            position:absolute;
+            top:90%;
+            bottom:0;
+            left:0;
+            right:0;
+           white-space:pre-wrap;
+            overflow:hidden;
+            background-color:rgba(0,0,0,0,3);
+            color:#fff;
+            padding:0  8px;
+            content:attr(data-text); 
+           transition:0.5s;
+        }
+        .textimage:hover:after{
+         
+          top:0;
+          padding:8px;
+          background-color:rgba(0,0,0,0,6);
+        }
+        .textimage:first-line{
+            color:#fff;
+            font-weight:bold;
+            font-size :1.5em;
+        }
+        </style>
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <th colspan="4">Movies Available</th>
+            </tr>
+            <tr>
+                <td colspan="4"> Click on the images for movie description</td>
+            </tr>
+            <tr>
+                <td><div class="textimage" style="background-image: url(../Assets/images/robo.jpg)" data-text="Robo,
+                    It is a science fiction film co-written and directed by S. Shankar and it is dubbed version of tamil movie 'Endhiran'. In which, Rajinikanth and Aishwarya Rai in the lead roles with A. R. Rahman working on background score and soundtrack. Produced by Kalanidhi Maran."></div>
+            </td>
+                <td><div class="textimage" style="background-image: url(../Assets/images/agnathavasi.jpg)" data-text="Agnathavasi,It is a romantic action entertainer written and directed by Trivikram Srinivas and produced by S Radha Krishna under Haarika and Haasine creations banner while Anirudh Ravichander scored music for this movie
+
+                    Pawan Kalyan, Keerthy Suresh and Anu Emmanuel are playing the main lead roles."></div></td>
+                <td><div class="textimage" style="background-image: url(../Assets/images/instantfamily.jpg)" data-text="Instant Family, It is a family entertainer where a couple wants to adopt 1 foster kid but they finally adopts 3 kids who are siblings. Mark Wahlberg, Rose Byrne, Isabela Moner are playing leading roles."></div></td>
+                
+                <td><div class="textimage" style="background-image: url(../Assets/images/Aravinda.jpg)" data-text="Aravinda Sametha Veera Raghava, 
+                    It is a romantic action entertainer written and directed by Trivikram Srinivas and produced by S. Radha Krishna while S. Thaman scored music for this movie. Jr. Ntr and Pooja Hedge are played the main lead roles"></div></td>
+            </tr>
+            <tr>
+                <td><img src="../Assets/images/robo.jpg"></td>
+                <td><img src="../Assets/images/instantfamily.jpg"></td>
+                <td><img src="../Assets/images/agnathavasi.jpg"></td>
+                <td><img src="../Assets/images/Aravinda.jpg"></td>
+            </tr>
+        </table>
+    </body>
+</html>
