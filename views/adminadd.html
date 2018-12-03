@@ -1,0 +1,112 @@
+
+
+	<head>
+        <link href="../Assets/css/adminadd.css" type="text/css" rel="stylesheet" />
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Adding movie</h2>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<p>Please fill the below details</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<form method="POST" action="/presenter">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="name">Movie Name</label>
+						<input type="text" class="form-control" id="fname" name="fname" pattern="[a-zA-Z ]+" required>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+			
+			
+			
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+                        <label for="level">Timings</label>
+                        <select class="form-control" id="target" name="target" name="cars" multiple required>
+                                <option value="volvo">11:00am</option>
+                                <option value="saab">1:00pm</option>
+                                <option value="opel">3:00pm</option>
+                                <option value="audi">5:00pm</option>
+                                <option value="audi1">7:00pm</option>
+                                
+                              </select>
+						
+                </div>
+                </div>
+				<div class="col-md-4"></div>
+            </div>
+            
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					
+						<label for="topic">Complete Description</label>
+						<div class="form-group">
+                                <textarea id="subject" class="form-control" name="subject" ></textarea>
+                            </div>
+					
+				
+                <div class="col-md-4"></div>
+                </div>
+                </div>
+			
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="attach">Movie Image</label>
+						
+													<input type="file" name="attach">
+												
+							</div>
+				</div>
+				<div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="name">Ratings</label>
+                            <input type="text" class="form-control" id="fname" name="fname" pattern="[0-9]+" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+			<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+				<label for="subject">Brief Description of the movie</label>
+				<div class="form-group">
+					<textarea id="subject" class="form-control" name="subject" ></textarea>
+				</div>
+				<div class="col-md-4"></div>
+			
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+		<div class="col-md-4"></div>
+		
+		</form>
+	</div>
+	

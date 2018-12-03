@@ -1,0 +1,21 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    }
+.r{
+    font-size: 30px;
+    text-align: center; 
+}
+.container{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+}
+.form-group{
+margin-left: 420px;
+margin-right: 400px;
+}
+.form-control{
+
+    border-color: black;
+    
+}
