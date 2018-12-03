@@ -14,6 +14,7 @@ var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
 
 
+
 mongoose.connect('mongodb+srv://akhil:uedpwd@cluster0-genok.mongodb.net/test?retryWrites=true');
 mongoose.connection.once('open', () => {
   console.log('connected to database');
@@ -27,6 +28,8 @@ var app = express();
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 app.engine('handlebars', exphbs({ defaultLayout: 'layout' }));
 app.set('view engine', 'handlebars');
 

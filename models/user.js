@@ -26,7 +26,7 @@ var UserSchema = mongoose.Schema({
 	isAdmin: {
 		type: Boolean,
 		default: false
-	},
+	}
 });
 
 UserSchema.plugin(passportLocalMongoose)
