@@ -31,7 +31,30 @@ function ensureAuthenticated(req, res, next) {
         response.render('home.ejs');
 
     });
+
+    router.get('/movies', ensureAuthenticated, function (request, response) {
+
+        response.render('movies.ejs');
+
+    });
+
+    router.get('/robo', ensureAuthenticated, function (request, response) {
+
+        response.render('robopage.ejs');
+
+    });
+
+    router.get('/booking', ensureAuthenticated, function (request, response) {
+
+        response.render('booking.ejs');
+
+    });
     
+    router.get('/payment', ensureAuthenticated, function (request, response) {
+
+        response.render('payment.ejs');
+
+    });
 
     
 
