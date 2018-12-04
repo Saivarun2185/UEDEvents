@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="/css/booking.css">
+        
     </head>
     <body>
         <div class="contaiiner-fluid">
@@ -12,10 +13,10 @@
         Select Quantity
         <br><br>
         <form method="POST" action="/BookingController/booking1">
-        <input type="text" value="9.49" name="price" hidden>
-        <input type="text" name="total" hidden>
+        
+        
         <input type="text" value="" name="userID" hidden>
-        <select id="mySelect" name="quantity">
+        <select id="mySelect" name="quantity" onchange="priceCalc()">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -23,9 +24,16 @@
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
-        &nbsp;* &nbsp; $9.49  &nbsp; = Price: 
-        <label id="price">abc</label>
-        
+        &nbsp;&nbsp;* &nbsp;&nbsp;$
+        <input type="text" value="9.49" name="price" disabled>
+        &nbsp;&nbsp; = &nbsp;&nbsp;
+        <input type="text" name="total" id="tot" disabled value="">
+        <script>
+        function priceCalc(){
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("tot").value = x * 9.49;
+        }
+    </script>
       <br><br>
         <label for="date"><b> Date</b></label>
         <input type="date" id="myDate" name="date">
