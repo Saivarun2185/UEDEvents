@@ -23,6 +23,8 @@ var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var movies = require('./Controller/MovieController');
+var bookings = require('./Controller/BookingController');
 
 var app = express();
 
@@ -88,6 +90,8 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/MovieController', movies);
+app.use('/BookingController', bookings);
 
 // if we get a 404 status, render 404.ejs view
 app.use(function (request, response) {

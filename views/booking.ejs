@@ -2,7 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" href="/css/booking.css">
-        <link rel="stylesheet" href="/css/login.css">
     </head>
     <body>
         <div class="contaiiner-fluid">
@@ -10,22 +9,31 @@
         <h1>&nbsp;&nbsp;WELCOME TO BOOKING PAGE</h1>
         <br>
         <div class="abx">
-        Select Quantity&nbsp;&nbsp;
-        <select id="mySelect">
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
+        Select Quantity
+        <br><br>
+        <form method="POST" action="/BookingController/booking1">
+        <input type="text" value="9.49" name="price" hidden>
+        <input type="text" name="total" hidden>
+        <input type="text" value="" name="userID" hidden>
+        <select id="mySelect" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
-        &nbsp;* &nbsp; $9.49 &nbsp; = Price: 
+        &nbsp;* &nbsp; $9.49  &nbsp; = Price: 
         <label id="price">abc</label>
+        
       <br><br>
-      <label for="date"><b> Date</b></label>
-        <input type="date" id="myDate">
+        <label for="date"><b> Date</b></label>
+        <input type="date" id="myDate" name="date">
+        
     <br>
     <br>
-    <a href="/payment" class="btn btn-primary abc" align="center">Continue</a>
+    <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
+    </form>
     </div>
     </div>
     </body>
