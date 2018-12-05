@@ -77,6 +77,17 @@ function ensureAuthenticated(req, res, next) {
 
     });
 
+    router.get('/agnathavasi', ensureAuthenticated, function (request, response) {
+        
+                response.render('agnathavasipage.ejs');
+        
+            });
+            router.get('/instantfamily', ensureAuthenticated, function (request, response) {
+                
+                        response.render('instantfamilypage.ejs');
+                
+                    });
+    
     router.get('/booking', ensureAuthenticated, function (request, response) {
 
         db.collection('movies').find().toArray(function(err, result){
