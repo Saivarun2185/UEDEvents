@@ -83,8 +83,8 @@ app.post("/payment", function(req,res){
   var mailOptions = {
     from: 'gdp2.fastrack@gmail.com',
     to: req.body.email1,
-    subject: 'Coupon code for code registration',
-    html: '<p>Hello,</p><p>Here is the coupon code that you need enter:</p>'  + '<p>Thanks&Regards</p><p>conference team</p> ',
+    subject: 'Ticket booking confirmation from vas theatres',
+    html: '<p>Hello,</p><p>You have successfully booked ticket for a movie in vas theatres </p>'  + '<p>Thanks&Regards</p><p>conference team</p> ',
   };
   console.log(req.body.email1);
   transporter.sendMail(mailOptions, function (error, info) {
