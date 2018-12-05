@@ -1,4 +1,4 @@
-
+<%include header %>
 
 	<head>
         <link href="../Assets/css/adminadd.css" type="text/css" rel="stylesheet" />
@@ -23,13 +23,13 @@
 			</div>
 			<div class="col-md-2"></div>
 		</div>
-		<form method="POST" action="/presenter">
+		<form method="POST" action="/AddmovieController/present">
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="name">Movie Name</label>
-						<input type="text" class="form-control" id="fname" name="fname" pattern="[a-zA-Z ]+" required>
+						<input type="text" class="form-control" id="fname" name="moviename" pattern="[a-zA-Z ]+" required>
 					</div>
 				</div>
 				<div class="col-md-4"></div>
@@ -42,12 +42,12 @@
 				<div class="col-md-4">
 					<div class="form-group">
                         <label for="level">Timings</label>
-                        <select class="form-control" id="target" name="target" name="cars" multiple required>
-                                <option value="volvo">11:00am</option>
-                                <option value="saab">1:00pm</option>
-                                <option value="opel">3:00pm</option>
-                                <option value="audi">5:00pm</option>
-                                <option value="audi1">7:00pm</option>
+                        <select class="form-control" id="target" name="target"  multiple required>
+                                <option value="11:00am">11:00am</option>
+                                <option value="2:00pm">2:00pm</option>
+                                <option value="4:00pm">4:00pm</option>
+                                <option value="6:00pm">6:00pm</option>
+                                
                                 
                               </select>
 						
@@ -60,7 +60,7 @@
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
 					
-						<label for="topic">Complete Description</label>
+						<label for="subject">Complete Description</label>
 						<div class="form-group">
                                 <textarea id="subject" class="form-control" name="subject" ></textarea>
                             </div>
@@ -87,7 +87,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="name">Ratings</label>
-                            <input type="text" class="form-control" id="fname" name="fname" pattern="[0-9]+" required>
+                            <input type="text" class="form-control" id="fname" name="rate" pattern="[0-9]+" required>
                         </div>
                     </div>
                     <div class="col-md-4"></div>
@@ -97,7 +97,7 @@
 					<div class="col-md-4">
 				<label for="subject">Brief Description of the movie</label>
 				<div class="form-group">
-					<textarea id="subject" class="form-control" name="subject" ></textarea>
+					<textarea id="subject" class="form-control" name="subject1" ></textarea>
 				</div>
 				<div class="col-md-4"></div>
 			

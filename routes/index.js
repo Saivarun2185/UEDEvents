@@ -96,6 +96,39 @@ router.get('/Aravindasametha', ensureAuthenticated, function (request, response)
 
 });
 
+router.get('/adminadd', ensureAuthenticated, function (request, response) {
+
+    response.render('adminadd.ejs');
+
+});
+
+router.get('/admindelbooking', ensureAuthenticated, function (request, response) {
+
+    response.render('admindelbooking.ejs');
+
+});
+
+router.get('/admindelete', ensureAuthenticated, function (request, response) {
+
+    db.collection('movies').find().toArray(function (err, result) {
+        if (err) throw err;
+
+        if (result.length == 0) {
+            result = emptym;
+        }
+        console.log(result)
+    })
+    
+    response.render('admindelete.ejs');
+
+});
+
+router.get('/adminrating', ensureAuthenticated, function (request, response) {
+
+    response.render('adminrating.ejs');
+
+});
+
 router.get('/booking', ensureAuthenticated, function (request, response) {
 
     db.collection('movies').find().toArray(function (err, result) {
