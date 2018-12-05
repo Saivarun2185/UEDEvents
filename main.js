@@ -23,6 +23,7 @@ var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var Contact = require('./models/contact.js');
 var movies = require('./Controller/MovieController');
 var bookings = require('./Controller/BookingController');
 
@@ -55,16 +56,47 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.post('/payment',  function (request, response) {
-  
-  console.log(request.body.firstname);
-  console.log(request.body.selecte);
-  console.log(request.body.amount);
-console.log(request.body.selec_date);
-  response.render('payment.ejs');
+app.post("/contact", (req, res) => {
+
+  var myData = new Contact(req.body);
+  myData.save()
+    .then(item => {
+      res.render("contact.ejs");
+
+    })
+
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
 
 });
 
+app.post("/payment", function(req,res){
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'gdp2.fastrack@gmail.com',
+      pass: 'gdp21234'
+    }
+  });
+
+  var mailOptions = {
+    from: 'gdp2.fastrack@gmail.com',
+    to: req.body.email1,
+    subject: 'Coupon code for code registration',
+    html: '<p>Hello,</p><p>Here is the coupon code that you need enter:</p>'  + '<p>Thanks&Regards</p><p>conference team</p> ',
+  };
+  console.log(req.body.email1);
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      // res.redirect('/faculty');
+      res.send("sucess")
+    }
+  });
+})
 // Express Validator
 app.use(expressValidator({
   errorFormatter: function (param, msg, value) {

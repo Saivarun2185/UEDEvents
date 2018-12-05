@@ -1,125 +1,126 @@
 <%include header.ejs%>
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-<head>
+    <head>
         <title>VAS MOVIES</title>
-    <style>
-        img {
-            width: 220px;
-            height: 220px;
-        }
+        <style>
+            img {
+                width: 220px;
+                height: 220px;
+            }
 
-        th {
-            font-size: 2em;
-            background-color: blue;
-            padding: 20px;
-        }
+            th {
+                font-size: 2em;
+                background-color: blue;
+                padding: 20px;
+            }
 
-        body {
-            font-family: sans-serif;
-            font-size: 1em;
-            text-align: center;
-        }
+            body {
+                font-family: sans-serif;
+                font-size: 1em;
+                text-align: center;
+            }
 
-        table {
-            background-color: white;
-            width: 60%;
-        }
+            table {
+                background-color: white;
+                width: 60%;
+            }
 
-        td {
-            padding: 25px;
-        }
+            td {
+                padding: 25px;
+            }
 
-        .textimage {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            float: left;
-            background-size: 100%;
-            background-position: center;
-            margin: 4px;
-            background-size: 100%;
-            transition: 0.5s;
-            text-align: left;
-        }
+            .textimage {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                float: left;
+                background-size: 100%;
+                background-position: center;
+                margin: 4px;
+                background-size: 100%;
+                transition: 0.5s;
+                text-align: left;
+            }
 
-        .textimage:hover {
-            background-size: 110%;
-        }
+            .textimage:hover {
+                background-size: 110%;
+            }
 
-        .textimage:after {
-            position: absolute;
-            top: 90%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            white-space: pre-wrap;
-            overflow: hidden;
-            background-color: rgba(0, 0, 0, 0, 3);
-            color: #fff;
-            padding: 0 8px;
-            content: attr(data-text);
-            transition: 0.5s;
-        }
+            .textimage:after {
+                position: absolute;
+                top: 90%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                white-space: pre-wrap;
+                overflow: hidden;
+                background-color: rgba(0, 0, 0, 0, 3);
+                color: #fff;
+                padding: 0 8px;
+                content: attr(data-text);
+                transition: 0.5s;
+            }
 
-        .textimage:hover:after {
+            .textimage:hover:after {
 
-            top: 0;
-            padding: 8px;
-            background-color: rgba(0, 0, 0, 0, 6);
-        }
+                top: 0;
+                padding: 8px;
+                background-color: rgba(0, 0, 0, 0, 6);
+            }
 
-        .textimage:first-line {
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+            .textimage:first-line {
+                color: #fff;
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
 
-<body>
-    <table align="center">
-        <tr>
-            <th colspan="12">Movies Available</th>
-        </tr>
-        <tr>
-            <td colspan="12"> Click on the images for movie description</td>
-        </tr>
-        <br>
-
-        <tr>
+    <body>
+        <table align="center">
+            <tr>
+                <th colspan="12">Movies Available</th>
+            </tr>
+            <tr>
+                <td colspan="12"> Click on the images for movie description</td>
+            </tr>
             <br>
-            <td>
-                <div class="textimage" style="background-image: url(/css/robo.jpg)" data-text="Robo,
+
+            <tr>
+                <br>
+                <td>
+                    <div class="textimage" style="background-image: url(/css/robo.jpg)" data-text="Robo,
                     It is a science fiction film co-written and directed by S. Shankar and it is dubbed version of tamil movie 'Endhiran'. In which, Rajinikanth and Aishwarya Rai in the lead roles with A. R. Rahman working on background score and soundtrack. Produced by Kalanidhi Maran.">
-                </div>
-                <a href="/robo" class="btn btn-primary">Buy Now
-            </td>
-            <td>
-                <div class="textimage" style="background-image: url(/css/agnathavasi.jpg)" data-text="Agnathavasi,It is a romantic action entertainer written and directed by Trivikram Srinivas and produced by S Radha Krishna under Haarika and Haasine creations banner while Anirudh Ravichander scored music for this movie
+                    </div>
+                    <a href="/robo" class="btn btn-primary">Buy Now
+                </td>
+                <td>
+                    <div class="textimage" style="background-image: url(/css/agnathavasi.jpg)" data-text="Agnathavasi,It is a romantic action entertainer written and directed by Trivikram Srinivas and produced by S Radha Krishna under Haarika and Haasine creations banner while Anirudh Ravichander scored music for this movie
 
                     Pawan Kalyan, Keerthy Suresh and Anu Emmanuel are playing the main lead roles."></div>
                     <a href="/agnathavasi" class="btn btn-primary">Buy Now
-            </td>
-            <td>
-                <div class="textimage" style="background-image: url(/css/instantfamily.jpg)" data-text="Instant Family, It is a family entertainer where a couple wants to adopt 1 foster kid but they finally adopts 3 kids who are siblings. Mark Wahlberg, Rose Byrne, Isabela Moner are playing leading roles."></div>
-                <a href="/instantfamily" class="btn btn-primary">Buy Now
-            </td>
+                </td>
+                <td>
+                    <div class="textimage" style="background-image: url(/css/instantfamily.jpg)" data-text="Instant Family, It is a family entertainer where a couple wants to adopt 1 foster kid but they finally adopts 3 kids who are siblings. Mark Wahlberg, Rose Byrne, Isabela Moner are playing leading roles."></div>
+                    <a href="/instantfamily" class="btn btn-primary">Buy Now
+                </td>
 
-            <td>
-                <div class="textimage" style="background-image: url(/css/Aravinda.jpg)" data-text="Aravinda Sametha Veera Raghava, 
+                <td>
+                    <div class="textimage" style="background-image: url(/css/Aravinda.jpg)" data-text="Aravinda Sametha Veera Raghava, 
                     It is a romantic action entertainer written and directed by Trivikram Srinivas and produced by S. Radha Krishna while S. Thaman scored music for this movie. Jr. Ntr and Pooja Hedge are played the main lead roles"></div>
-                <button class="btn btn-primary">Buy Now</button>
-            </td>
-        </tr>
+                    <a href="/Aravindasametha" class="btn btn-primary">Buy Now
 
-    </table>
-</body>
+                </td>
+            </tr>
 
-</html>
+        </table>
+    </body>
+
+    </html>

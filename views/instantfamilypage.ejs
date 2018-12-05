@@ -65,11 +65,7 @@
             </div>
         
 
-        <p>Robo is a science fiction film co-written and directed by S. Shankar and it is dubbed version of tamil movie "Endhiran".
-            In which, Rajinikanth and Aishwarya Rai in the lead roles with A. R. Rahman working on background score and soundtrack.
-            Produced by Kalanidhi Maran. Rajni plays dual roles. One is a scientist and the other is a Robot. Scientist Rajni
-            creates a Robot with artificial intelligence – like that of sixth sense in humans – to help human beings and
-            to the development of the country.</p>
+        <p>Instant Family, It is a family entertainer where a couple wants to adopt 1 foster kid but they finally adopts 3 kids who are siblings. Mark Wahlberg, Rose Byrne, Isabela Moner are playing leading roles.</p>
         <h2>Movie Rating</h2>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -77,11 +73,13 @@
         <span class="fa fa-star "></span>
         <span class="fa fa-star"></span>
         <h3>Available timings</h3>
-        <form action="/booking" align="center">
-            <input type="submit" value="11:00am" />
-            <input type="submit" value="2:00pm" />
-            <input type="submit" value="4:00pm" />
-            <input type="submit" value="6:00pm" />
+        <form action="/MovieController/selectMovie" method="POST" align="center">
+            <input type="text" value="<%=user.username%>" name="userID" hidden>
+            <input type="text" value="Instantfamily" name="movie" hidden>
+            <input type="submit" value="11:00am" name="timing"/>
+            <input type="submit" value="2:00pm" name="timing"/>
+            <input type="submit" value="4:00pm" name="timing"/>
+            <input type="submit" value="6:00pm" name="timing"/>
             <br>
             <br>
         </form>

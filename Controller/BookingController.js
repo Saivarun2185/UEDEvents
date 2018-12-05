@@ -7,6 +7,7 @@ const db = mongoose.connection;
 api.post('/booking1',  function (req, res) {
 
     var name = req.body.firstname;
+    var email = req.body.email;
     var quantity = req.body.quantity;
     var price = req.body.price;
     var total = req.body.total;
@@ -19,6 +20,7 @@ api.post('/booking1',  function (req, res) {
     var newMovie = new Model({
 
         name: name,
+        email: email,
         quantity: quantity,
         price: price,
         total: total,
@@ -33,7 +35,7 @@ api.post('/booking1',  function (req, res) {
         Model.create(newMovie, function (err, Movie) {
             if (err) throw err;
         });
-        return res.render('payment.ejs',{name: req.body.firstname,})
+        return res.render('payment.ejs',{name: req.body.firstname, email: req.body.email, quantity: req.body.quantity, price : req.body.price, total: req.body.total, date: req.body.date, movie: req.body.movie, timing: req.body.timing})
 });
 
 module.exports = api;

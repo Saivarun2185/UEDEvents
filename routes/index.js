@@ -45,84 +45,91 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-    // Routing 
+// Routing 
 
-    router.get('/home', ensureAuthenticated, function (request, response) {
+router.get('/home', ensureAuthenticated, function (request, response) {
 
-        response.render('home.ejs');
+    response.render('home.ejs');
 
-    });
+});
 
-    router.get('/movies', ensureAuthenticated, function (request, response) {
+router.get('/movies', ensureAuthenticated, function (request, response) {
 
-        response.render('movies.ejs');
+    response.render('movies.ejs');
 
-    });
+});
 
-    router.get('/contact', ensureAuthenticated, function (request, response) {
+router.get('/contact', ensureAuthenticated, function (request, response) {
 
-        response.render('contact.ejs');
-    
-    });
-    
-    router.get('/rating', ensureAuthenticated, function (request, response) {
-    
-        response.render('userrating.ejs');
-    
-    });
+    response.render('contact.ejs');
 
-    router.get('/robo', ensureAuthenticated, function (request, response) {
+});
 
-        response.render('robopage.ejs');
+router.get('/rating', ensureAuthenticated, function (request, response) {
 
-    });
+    response.render('userrating.ejs');
 
-    router.get('/agnathavasi', ensureAuthenticated, function (request, response) {
-        
-                response.render('agnathavasipage.ejs');
-        
-            });
-            router.get('/instantfamily', ensureAuthenticated, function (request, response) {
-                
-                        response.render('instantfamilypage.ejs');
-                
-                    });
-    
-    router.get('/booking', ensureAuthenticated, function (request, response) {
+});
 
-        db.collection('movies').find().toArray(function(err, result){
-            if(err) throw err;
+router.get('/robo', ensureAuthenticated, function (request, response) {
 
-            if(result.length == 0){
-                result = emptym;
-            }
-            response.render('booking.ejs', {movietime: result});
-        })
+    response.render('robopage.ejs');
 
-    });
-    
-    router.get('/payment', function (request, response) {
+});
 
-        response.render('payment.ejs');
+router.get('/agnathavasi', ensureAuthenticated, function (request, response) {
 
-    });
+    response.render('agnathavasipage.ejs');
 
-    router.get('/mybookings', ensureAuthenticated, function (request, response) {
+});
 
-        db.collection('bookings').find().toArray(function(err, result){
-            if(err) throw err;
+router.get('/instantfamily', ensureAuthenticated, function (request, response) {
 
-            if(result.length == 0){
-                result = emptyb;
-            }
-            console.log(result)
-            response.render('mybookings.ejs', {bookingslist: result});
-        })
+    response.render('instantfamilypage.ejs');
 
-    });
+});
+
+router.get('/Aravindasametha', ensureAuthenticated, function (request, response) {
+
+    response.render('AravindaSamethapage.ejs');
+
+});
+
+router.get('/booking', ensureAuthenticated, function (request, response) {
+
+    db.collection('movies').find().toArray(function (err, result) {
+        if (err) throw err;
+
+        if (result.length == 0) {
+            result = emptym;
+        }
+        response.render('booking.ejs', { movietime: result });
+    })
+
+});
+
+router.get('/payment', function (request, response) {
+
+    response.render('payment.ejs');
+
+});
+
+router.get('/mybookings', ensureAuthenticated, function (request, response) {
+
+    db.collection('bookings').find().toArray(function (err, result) {
+        if (err) throw err;
+
+        if (result.length == 0) {
+            result = emptyb;
+        }
+        console.log(result)
+        response.render('mybookings.ejs', { bookingslist: result });
+    })
+
+});
 
 
-    
+
 
 module.exports = router;
 

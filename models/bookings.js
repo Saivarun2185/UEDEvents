@@ -6,6 +6,11 @@ var BookingSchema = mongoose.Schema({
     name: {
 		type: String,
     },
+
+    email: {
+		type: String,
+    },
+    
 	quantity: {
 		type: String,
     },
