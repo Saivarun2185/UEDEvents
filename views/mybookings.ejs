@@ -4,13 +4,12 @@
 </head>
 <body>
     <h1 align="center">Booking Details</h1>
-    
+
     <%if(bookingslist[0].movie == ""){%>
     <br>
     <h3>No bookings found.</h3>
     <%}%>
 
-    <%if(bookingslist[0].movie != ""){%>
     <table class="table" id="pull">
         <thead>
             <tr>
@@ -19,6 +18,7 @@
             <th>Movie Timing</th>
             <th>Price per Ticket</th>
             <th>Total price</th>
+            <th>Reference ID</th>
             <th></th>
             <th></th>
         </tr>
@@ -31,11 +31,13 @@
                  <td><%=bookingslist[i].timing%></td>
                  <td><%=bookingslist[i].price%></td>
                  <td><%=bookingslist[i].total%></td>
+                 <td><%=bookingslist[i]._id%></td>
                  <td><a class="btn btn-warning">Modify</a></td>
                  <td><a class="btn btn-danger">Cancel</a></td>
              </tr>   
-            <%}%>
+             <%}%>
         </tbody>
     </table>
-    <%}%>
+
+    
 </body>

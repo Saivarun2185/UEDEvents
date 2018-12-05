@@ -19,7 +19,6 @@
                 <br>
                 <br>
                 <label>Select number of tickets</label> <br> &nbsp;&nbsp;
-                <input type="text" value="" name="userID" hidden>
                 <select id="mySelect" name="quantity" onchange="priceCalc()">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -44,16 +43,17 @@
                 <br><br>
                 <label for="date"><b> Date</b></label>
                 <input type="date" class="form-control" id="myDate" name="date">
-
+                <input type="text" name="userID" value="<%=user.username%>" hidden>
                 <br>
                 <br>
 
 
-                <%if(movietime.length>0){%>
-                <%for(let i = 0 ; i < movietime.length; i++){%>
+                <%if(movietime.length>0 ){%>
+                <%let i = movietime.length - 1%>
+                
                 <input type="text" name="movie" value="<%=movietime[i].movie%>" hidden>
                 <input type="text" name="timing" value="<%=movietime[i].timing%>" hidden>
-                <%}%>
+                
                 <%}%>
                 <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
             </form>

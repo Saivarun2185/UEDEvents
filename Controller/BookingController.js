@@ -13,6 +13,7 @@ api.post('/booking1',  function (req, res) {
     var date = req.body.date;
     var movie = req.body.movie;
     var timing = req.body.timing;
+    var userID = req.body.userID;
     var reference = req.body.reference;
 
     var newMovie = new Model({
@@ -24,6 +25,7 @@ api.post('/booking1',  function (req, res) {
         date: date,
         movie: movie,
         timing: timing,
+        userID: userID,
         reference: reference
         
     });
