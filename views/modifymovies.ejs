@@ -1,0 +1,80 @@
+<%include header.ejs%>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/booking.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h1 align="center">&nbsp;&nbsp;WELCOME TO BOOKING PAGE</h1>
+        <br>
+        
+
+            <form method="POST" action="/BookingController/bookingm">
+                <h3>Booking for <%=bookinglist[0].movie%></h3>
+                <label for="text" >FirstName</label>
+                <input type="text" class="form-control i" name="firstname" id="firstname" value="<%=bookinglist[0].name%>"/>
+                <br>
+                <br>
+                <label for="email">Email</label>
+                <input type="email" class="form-control i" name="email" id="email" value="<%=bookinglist[0].email%>"/><br><br>
+                <label>Select number of tickets</label> <br> &nbsp;&nbsp;
+                <select id="mySelect" name="quantity" onchange="priceCalc()">
+                    <option value="1"><%=bookinglist[0].quantity%></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                &nbsp;&nbsp;* &nbsp;&nbsp;$
+                <input type="text" name="price" value="<%=bookinglist[0].price%>" hidden>
+                <label><%=bookinglist[0].price%></label>
+                &nbsp;&nbsp; = &nbsp;&nbsp;
+                <input type="text" name="total" id="tot" value="<%=bookinglist[0].total%>" hidden>
+                $<label id="t"><%=bookinglist[0].total%></label>
+                <script>
+                    function priceCalc() {
+                        var x = document.getElementById("mySelect").value;
+                        var y = document.getElementById("tot").value = x * 9.49;
+                        document.getElementById("t").innerHTML = y;
+                    }
+                </script>
+                <br><br>
+                <!-- <label>Choose timings</label><br>
+                <select id="t0" onchange="tim()">
+                        <option value="11:00am"><%=bookinglist[0].timing%></option>
+                        <option value="11:00am">11:00am</option>
+                        <option value="2:00pm">2:00pm</option>
+                        <option value="4:00pm">4:00pm</option>
+                        <option value="6:00pm">6:00pm</option>
+                    </select>
+                    <input type="text" id="t1" name="timing">
+                    <script>
+                        function tim(){
+                            var x = document.getElementById("t0").value;
+                            document.getElementById("t1").value = x;
+                        }
+                    </script>
+                <br><br> -->
+                <label for="date"><b> Date</b></label>
+                <input type="date" name="date" value="<%bookinglist[0].date%>">
+                <input type="text" name="userID" value="<%=bookinglist[0]._id%>" hidden>
+                <br>
+                <br>
+  
+                <input type="text" name="movie" value="<%=bookinglist[0].movie%>" hidden>
+                <input type="text" name="timing" value="<%=bookinglist[0].timing%>" hidden>
+                
+                
+                <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
+            </form>
+        
+    </div>
+</body>
+
+</html>
