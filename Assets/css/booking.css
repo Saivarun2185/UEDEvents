@@ -1,7 +1,25 @@
-.abx{
-    margin-left: 50px;
-}
-
 .abc{
     margin-left: 100px;
+    float: center;
 }
+
+body {
+    font-family: Georgia, serif;
+    overflow-x: hidden;    
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+.form {
+    border: 3px
+ } 
+
+ .form-control{
+     margin-right: 200px;
+ }

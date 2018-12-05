@@ -1,11 +1,11 @@
 {
-  "name": "costume-designier",
+  "name": "VAS-Movies",
   "version": "0.0.1",
-  "description": "costume-designier",
+  "description": "VAS Movies",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/s530479-ShivaKumar/GDP-1Group4_Section2"
+    "url": "https://github.com/S530485/UED_Project"
   },
   "dependencies": {
     "async": "^2.6.1",

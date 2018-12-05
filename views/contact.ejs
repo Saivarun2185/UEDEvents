@@ -1,48 +1,48 @@
 
+<% include header %>
+<head>
+    <link href="../css/contact.css" type="text/css" rel="stylesheet" />
+</head>
 
-    <head>
-        <link href="../Assets/css/contact.css" type="text/css" rel="stylesheet" />
-    </head>
-
-    <body>
-
-        <h3 class="r">Contact Form</h3>
-
+<body>
         <div class="container">
-            <form action="/contact" method="POST">
-                <div class="row">
-                    <label for="fname">First Name</label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="fname" name="firstname" placeholder="Your name.." pattern="[a-zA-Z ]+" required>
-                    </div>
+    <h1 class="r">Contact Form</h3>
+<br>
+    
+        <form action="/contact" method="POST">
+            <div class="row">
+                <label for="fname">First Name</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fname" name="firstname" placeholder="Your name.." pattern="[a-zA-Z ]+" required>
                 </div>
+            </div>
 
-                <div class="row">
-                    <label for="lname">Last Name</label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="lname" name="lastname" placeholder="Your last name.." pattern="[a-zA-Z ]+" required>
-                    </div>
+            <div class="row">
+                <label for="lname">Last Name</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="lname" name="lastname" placeholder="Your last name.." pattern="[a-zA-Z ]+" required>
                 </div>
-                <div class="row">
-                    <label for="Email address">Email Address</label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+" required>
-                    </div>
+            </div>
+            <div class="row">
+                <label for="Email address">Email Address</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$+" required>
                 </div>
-                <div class="row">
-                    <label for="subject">Message</label>
-                    <div class="form-group">
-                        <textarea id="subject" class="form-control" name="subject" placeholder="Write something.."></textarea>
-                    </div>
+            </div>
+            <div class="row">
+                <label for="subject">Message</label>
+                <div class="form-group">
+                    <textarea id="subject" class="form-control" name="subject" placeholder="Write something.."></textarea>
                 </div>
-                <br>
-                <div class="row">
+            </div>
+            <br>
+            <div class="row">
 
-                    <input type="submit" value="Submit" class="btn btn-primary">
-                </div>
-                <input type="text" name="reply" hidden>
-            </form>
-           
-        </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+            <input type="text" name="reply" hidden>
+        </form>
+       
+    </div>
 
-    </body>
+</body>

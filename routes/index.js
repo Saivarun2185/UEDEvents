@@ -24,7 +24,7 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-    // Routing for disigner pull list
+    // Routing 
 
     router.get('/home', ensureAuthenticated, function (request, response) {
 
@@ -36,6 +36,18 @@ function ensureAuthenticated(req, res, next) {
 
         response.render('movies.ejs');
 
+    });
+
+    router.get('/contact', ensureAuthenticated, function (request, response) {
+
+        response.render('contact.ejs');
+    
+    });
+    
+    router.get('/rating', ensureAuthenticated, function (request, response) {
+    
+        response.render('userrating.ejs');
+    
     });
 
     router.get('/robo', ensureAuthenticated, function (request, response) {
@@ -50,7 +62,7 @@ function ensureAuthenticated(req, res, next) {
 
     });
     
-    router.get('/payment', ensureAuthenticated, function (request, response) {
+    router.get('/payment', function (request, response) {
 
         response.render('payment.ejs');
 

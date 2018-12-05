@@ -2,6 +2,10 @@ var mongoose = require('mongoose');
 
 // Movie Schema
 var BookingSchema = mongoose.Schema({
+    
+    name: {
+		type: String,
+    },
 	quantity: {
 		type: String,
     },

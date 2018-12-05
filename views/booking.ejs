@@ -1,48 +1,52 @@
 <%include header.ejs%>
-<html>
+    <html>
+
     <head>
         <link rel="stylesheet" href="/css/booking.css">
-        
+
     </head>
+
     <body>
         <div class="contaiiner-fluid">
-        
-        <h1>&nbsp;&nbsp;WELCOME TO BOOKING PAGE</h1>
-        <br>
-        <div class="abx">
-        Select Quantity
-        <br><br>
-        <form method="POST" action="/BookingController/booking1">
-        
-        
-        <input type="text" value="" name="userID" hidden>
-        <select id="mySelect" name="quantity" onchange="priceCalc()">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-        &nbsp;&nbsp;* &nbsp;&nbsp;$
-        <input type="text" value="9.49" name="price" disabled>
-        &nbsp;&nbsp; = &nbsp;&nbsp;
-        <input type="text" name="total" id="tot" disabled value="">
-        <script>
-        function priceCalc(){
-            var x = document.getElementById("mySelect").value;
-            document.getElementById("tot").value = x * 9.49;
-        }
-    </script>
-      <br><br>
-        <label for="date"><b> Date</b></label>
-        <input type="date" id="myDate" name="date">
-        
-    <br>
-    <br>
-    <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
-    </form>
-    </div>
-    </div>
+
+            <h1 align="center">&nbsp;&nbsp;WELCOME TO BOOKING PAGE</h1>
+            <br>
+            <div class="abc container">
+
+                <form method="POST" action="/BookingController/booking1">
+                    <label for="text">FirstName</label>
+                    <input type="text" class="form-control i" name="firstname" id="firstname" />
+                    <br>
+                    <br>
+                    <label>Select number of tickets</label> <br> &nbsp;&nbsp;
+                    <input type="text" value="" name="userID" hidden>
+                    <select id="mySelect" name="quantity" onchange="priceCalc()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    &nbsp;&nbsp;* &nbsp;&nbsp;$
+                    <input type="text" value="9.49" name="price" disabled> &nbsp;&nbsp; = &nbsp;&nbsp;
+                    <input type="text" name="total" id="tot" disabled value="">
+                    <script>
+                        function priceCalc() {
+                            var x = document.getElementById("mySelect").value;
+                            document.getElementById("tot").value = x * 9.49;
+                        }
+                    </script>
+                    <br><br>
+                    <label for="date"><b> Date</b></label>
+                    <input type="date" class="form-control" id="myDate" name="date">
+
+                    <br>
+                    <br>
+                    <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
+                </form>
+            </div>
+        </div>
     </body>
-</html>
+
+    </html>

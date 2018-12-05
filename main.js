@@ -55,6 +55,16 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.post('/payment',  function (request, response) {
+  
+  console.log(request.body.firstname);
+  console.log(request.body.selecte);
+  console.log(request.body.amount);
+console.log(request.body.selec_date);
+  response.render('payment.ejs');
+
+});
+
 // Express Validator
 app.use(expressValidator({
   errorFormatter: function (param, msg, value) {
@@ -99,7 +109,7 @@ app.use(function (request, response) {
 });
 
 // Set Port
-app.set('port', (process.env.PORT || 8089));
+app.set('port', (process.env.PORT || 8081));
 
 var server = app.listen(app.get('port'), function () {
   console.log('Server started on port ' + app.get('port'));
