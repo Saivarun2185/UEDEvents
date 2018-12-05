@@ -11,6 +11,9 @@ api.post('/booking1',  function (req, res) {
     var price = req.body.price;
     var total = req.body.total;
     var date = req.body.date;
+    var movie = req.body.movie;
+    var timing = req.body.timing;
+    var reference = req.body.reference;
 
     var newMovie = new Model({
 
@@ -18,7 +21,10 @@ api.post('/booking1',  function (req, res) {
         quantity: quantity,
         price: price,
         total: total,
-        date: date
+        date: date,
+        movie: movie,
+        timing: timing,
+        reference: reference
         
     });
     

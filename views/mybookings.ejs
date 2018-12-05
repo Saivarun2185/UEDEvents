@@ -1,0 +1,41 @@
+<%include header.ejs%>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />
+</head>
+<body>
+    <h1 align="center">Booking Details</h1>
+    
+    <%if(bookingslist[0].movie == ""){%>
+    <br>
+    <h3>No bookings found.</h3>
+    <%}%>
+
+    <%if(bookingslist[0].movie != ""){%>
+    <table class="table" id="pull">
+        <thead>
+            <tr>
+            <th>S.NO</th>
+            <th>Movie Name</th>
+            <th>Movie Timing</th>
+            <th>Price per Ticket</th>
+            <th>Total price</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <%for(let i = 0; i < bookingslist.length; i++){%>
+             <tr>
+                 <td><%=i+1%></td>
+                 <td><%=bookingslist[i].movie%></td>
+                 <td><%=bookingslist[i].timing%></td>
+                 <td><%=bookingslist[i].price%></td>
+                 <td><%=bookingslist[i].total%></td>
+                 <td><a class="btn btn-warning">Modify</a></td>
+                 <td><a class="btn btn-danger">Cancel</a></td>
+             </tr>   
+            <%}%>
+        </tbody>
+    </table>
+    <%}%>
+</body>

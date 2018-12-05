@@ -43,7 +43,15 @@
 
                     <br>
                     <br>
-                    <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
+
+
+                    <%if(movietime.length>0){%>
+                        <%for(let i = 0 ; i < movietime.length; i++){%>
+                            <input type="text" name="movie" value="<%=movietime[i].movie%>" hidden>
+                            <input type="text" name="timing" value="<%=movietime[i].timing%>" hidden>
+                            <%}%>
+                                <%}%>
+                                    <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
                 </form>
             </div>
         </div>
