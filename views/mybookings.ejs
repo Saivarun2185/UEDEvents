@@ -15,8 +15,8 @@
             <tr>
             <th>S.NO</th>
             <th>Movie Name</th>
+            <th>Date</th>
             <th>Movie Timing</th>
-            <th>Price per Ticket</th>
             <th>Total price</th>
             <th>Reference ID</th>
             <th></th>
@@ -26,14 +26,21 @@
         <tbody>
             <%for(let i = 0; i < bookingslist.length; i++){%>
              <tr>
+                 
                  <td><%=i+1%></td>
                  <td><%=bookingslist[i].movie%></td>
+                 <td><%=bookingslist[i].date%></td>
                  <td><%=bookingslist[i].timing%></td>
-                 <td><%=bookingslist[i].price%></td>
                  <td><%=bookingslist[i].total%></td>
                  <td><%=bookingslist[i]._id%></td>
-                 <td><a class="btn btn-warning">Modify</a></td>
-                 <td><a class="btn btn-danger">Cancel</a></td>
+                 <form method="POST" action="/modifybookings">
+                    <input type="text" value="<%=bookingslist[i]._id%>" name="idmodify" hidden>
+                 <td><Input type="submit" class="btn btn-warning" value="Modify"></td>
+                 </form>
+                 <form method="POST" onsubmit="return confirm('Are you sure want to cancel booking?')" action="/BookingController/delete">
+                     <input type="text" value="<%=bookingslist[i]._id%>" name="id" hidden>
+                 <td><input type="submit" class="btn btn-danger" value="Cancel"></td>
+                </form>
              </tr>   
              <%}%>
         </tbody>

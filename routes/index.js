@@ -3,6 +3,7 @@ var router = express.Router();
 var model = require('../models/user')
 const mongoose = require('mongoose')
 const db = mongoose.connection;
+var ObjectId = require('mongodb').ObjectID;
 
 let emptym = [
     {
@@ -122,8 +123,21 @@ router.get('/mybookings', ensureAuthenticated, function (request, response) {
         if (result.length == 0) {
             result = emptyb;
         }
-        console.log(result)
         response.render('mybookings.ejs', { bookingslist: result });
+    })
+
+});
+
+router.post('/modifybookings', ensureAuthenticated, function (req, response) {
+
+    var query = { "_id": ObjectId(req.body.idmodify) };
+    db.collection('bookings').find(query).toArray(function (err, result) {
+        if (err) throw err;
+
+        if (result.length == 0) {
+            result = emptyb;
+        }
+        response.render('modifymovies.ejs', { bookinglist: result });
     })
 
 });
