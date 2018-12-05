@@ -4,7 +4,28 @@ var model = require('../models/user')
 const mongoose = require('mongoose')
 const db = mongoose.connection;
 
+let emptym = [
+    {
+        movie: "",
+        timing: "",
+        userID: ""
+    }
 
+]
+
+let emptyb = [
+    {
+        quantity: "",
+        price: "",
+        total: "",
+        date: "",
+        movie: "",
+        timing: "",
+        userID: "",
+        reference: ""
+    }
+
+]
 
 
 router.get('/', function (req, res) {
@@ -46,7 +67,14 @@ function ensureAuthenticated(req, res, next) {
 
     router.get('/booking', ensureAuthenticated, function (request, response) {
 
-        response.render('booking.ejs');
+        db.collection('movies').find().toArray(function(err, result){
+            if(err) throw err;
+
+            if(result.length == 0){
+                result = emptym;
+            }
+            response.render('booking.ejs', {movietime: result});
+        })
 
     });
     
@@ -55,6 +83,21 @@ function ensureAuthenticated(req, res, next) {
         response.render('payment.ejs');
 
     });
+
+    router.get('/mybookings', ensureAuthenticated, function (request, response) {
+
+        db.collection('bookings').find().toArray(function(err, result){
+            if(err) throw err;
+
+            if(result.length == 0){
+                result = emptyb;
+            }
+            console.log(result)
+            response.render('mybookings.ejs', {bookingslist: result});
+        })
+
+    });
+
 
     
 

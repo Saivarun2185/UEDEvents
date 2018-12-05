@@ -18,7 +18,19 @@ var BookingSchema = mongoose.Schema({
         type: String,
     },
 
+    movie: {
+        type: String,
+    },
+
+    timing: {
+        type: String,
+    },
+
     userID: {
+        type: String,
+    },
+
+    reference: {
         type: String,
     }
     

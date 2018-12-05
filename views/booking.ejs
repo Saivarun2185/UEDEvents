@@ -25,13 +25,17 @@
             <option value="6">6</option>
           </select>
         &nbsp;&nbsp;* &nbsp;&nbsp;$
-        <input type="text" value="9.49" name="price" disabled>
+        <input type="text" value="9.49" name="price" hidden>
+        <label>9.49</label>
         &nbsp;&nbsp; = &nbsp;&nbsp;
-        <input type="text" name="total" id="tot" disabled value="">
+        <input type="text" name="total" id="tot" hidden>
+        $<label id="t">9.49</label>
         <script>
         function priceCalc(){
             var x = document.getElementById("mySelect").value;
-            document.getElementById("tot").value = x * 9.49;
+            var y = document.getElementById("tot").value = x * 9.49;
+            document.getElementById("t").innerHTML = y;
+
         }
     </script>
       <br><br>
@@ -40,6 +44,12 @@
         
     <br>
     <br>
+    <%if(movietime.length>0){%>
+        <%for(let i = 0 ; i < movietime.length; i++){%>
+            <input type="text" name="movie" value="<%=movietime[i].movie%>" hidden>
+            <input type="text" name="timing" value="<%=movietime[i].timing%>" hidden>
+        <%}%>
+    <%}%>
     <input type="submit" class="btn btn-primary abc" align="center" value="Continue">
     </form>
     </div>
