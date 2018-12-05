@@ -8,11 +8,13 @@ api.post('/selectMovie',  function (req, res) {
     
     var timing = req.body.timing;
     var movie = req.body.movie;
+    var userID = req.body.userID;
 
     var newMovie = new Model({
         
         timing: timing,
-        movie: movie
+        movie: movie,
+        userID: userID
         
     });
     
