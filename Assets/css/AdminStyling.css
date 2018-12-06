@@ -1,0 +1,63 @@
+#Details {
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Details td, #Details th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#Details tr:nth-child(even){background-color: #f2f2f2;}
+
+#Details tr:hover {background-color: #ddd;}
+
+#Details th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+
+#update {
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 40%;
+}
+
+#update td, #update th {
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+#update tr:hover {background-color: #ddd;}
+
+#update th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #313030;;
+    color: white;
+}
+#add {
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 30%;
+}
+
+#add td, #add th {
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+
+#add tr:hover {background-color: #ddd;}
+
+#add th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #313030;;
+    color: white;
+}

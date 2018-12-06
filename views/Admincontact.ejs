@@ -1,0 +1,61 @@
+<% include header %>
+
+  <head>
+    <link href="/css/AdminStyling.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div><br><br><br><br>
+
+      <body>
+        <div class="col-md-8">
+          <h2 align="center"> Contact Detail List</h2>
+          <br>
+        </div>
+        <br>
+        <br>
+        <div class="w3-container">
+          <table class="w3-table-all w3-card-4" id="Details" align="center">
+            <tr>
+              <th>Number</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Reply</th>
+
+            </tr>
+            <% for(let i = 0; i < list.length; i++) { %>
+              <tr>
+                <td>
+                  <%= i+1 %>
+                </td>
+                <td>
+                  <%= list[i].firstname %>
+                </td>
+                <td>
+                  <%= list[i].lastname %>
+                </td>
+                <td>
+                  <%= list[i].email %>
+                </td>
+                <td>
+                  <%= list[i].subject %>
+                </td>
+                <form action="/reply" method="POST">
+                  <input type="text" name="reply" value="<%= list[i].reply %>" hidden>
+                  
+                  <%if(list[i].reply ==0){%>
+                    <td><button type="submit" class="btn btn-success">Reply</button></td>
+                    <%}%>
+                      <%if(list[i].reply !=0){%>
+                        <td><button disabled class="btn btn-success">Replied</button></td>
+                        <%}%>
+                </form>
+                <%}%>
+                  </form>
+              </tr>
+          </table>
+
+        </div>

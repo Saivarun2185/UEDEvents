@@ -38,7 +38,7 @@
           <td>
             <%=bookingslist[i].subject1%>
           </td>
-          <form method="POST" onsubmit="return confirm('Are you sure want to cancel booking?')" action="/AddmovieController/delete">
+          <form method="POST" onsubmit="return confirm('Are you sure want to delete movie?')" action="/AddmovieController/delete">
             <input type="text" value="<%=bookingslist[i]._id%>" name="id" hidden>
         <td><input type="submit" class="btn btn-danger" value="Delete"></td>
        </form>

@@ -66,6 +66,19 @@ router.get('/contact', ensureAuthenticated, function (request, response) {
 
 });
 
+router.get('/Admincontact', ensureAuthenticated, function (request, response) {
+
+    db.collection('contacts').find().toArray(function (err, result) {
+        if (err) throw err;
+
+        
+        console.log(result)
+        response.render('Admincontact.ejs', { list:result });
+    })
+    
+
+});
+
 router.get('/rating', ensureAuthenticated, function (request, response) {
 
     response.render('userrating.ejs');
@@ -90,17 +103,6 @@ router.get('/instantfamily', ensureAuthenticated, function (request, response) {
 
 });
 
-router.get('/Nowplaying', ensureAuthenticated, function (request, response) {
-    
-        response.render('instantfamilypage.ejs');
-    
-    });
-
-    router.get('/Comingsoon', ensureAuthenticated, function (request, response) {
-        
-            response.render('instantfamilypage.ejs');
-        
-        });
 
 router.get('/Aravindasametha', ensureAuthenticated, function (request, response) {
 

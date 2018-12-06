@@ -63,7 +63,7 @@ app.post("/contact", (req, res) => {
   var myData = new Contact(req.body);
   myData.save()
     .then(item => {
-      res.render("contact.ejs");
+      res.redirect("/contact");
 
     })
 
@@ -72,6 +72,18 @@ app.post("/contact", (req, res) => {
     });
 
 });
+
+app.post("/reply", function (request, response) {
+  
+  db.collection('contacts').update({ 'reply': request.body.reply }, { $set: { 'reply': "replied" } });
+ 
+      db.collection('contacts').find().toArray(function (err, result) {
+        if (err) throw err;
+        response.redirect('/Admincontact')
+
+      });
+    
+  });
 
 app.post("/payment", function(req,res){
   var transporter = nodemailer.createTransport({
