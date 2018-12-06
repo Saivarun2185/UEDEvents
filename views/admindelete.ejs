@@ -1,12 +1,48 @@
 <%include header %>
-<head>
-        <link href="../Assets/css/adminadd.css" type="text/css" rel="stylesheet" />
-        <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	
-			
-			
+
+  <head>
+    <link href="../css/adminadd.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <table class="table" id="pull">
+    <thead>
+      <tr>
+        <th>S.NO</th>
+        <th>Movie Name</th>
+        <th>Movie Timing</th>
+        <th>Movie Rating</th>
+        <th>Movie Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(let i = 0; i < bookingslist.length; i++){%>
+        <tr>
+
+          <td>
+            <%=i+1%>
+          </td>
+          <td>
+            <%=bookingslist[i].moviename%>
+          </td>
+          <td>
+            <%=bookingslist[i].target%>
+          </td>
+          <td>
+            <%=bookingslist[i].rate%>
+          </td>
+          <td>
+            <%=bookingslist[i].subject1%>
+          </td>
+          <form method="POST" onsubmit="return confirm('Are you sure want to cancel booking?')" action="/AddmovieController/delete">
+            <input type="text" value="<%=bookingslist[i]._id%>" name="id" hidden>
+        <td><input type="submit" class="btn btn-danger" value="Delete"></td>
+       </form>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>

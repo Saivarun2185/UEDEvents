@@ -14,14 +14,15 @@
         <div class="container">
             <h1 align="center">User Rating</h1>
             <br>
-            <form>
+            <form method="POST" action="/RatingController/rating">
                 <div class="form-group">
                     <label for="sel1">Select Movie:</label>
-                    <select class="form-control" id="sel1">
+                    <select class="form-control" id="sel1" name="movie">
                         <option>Robo</option>
                         <option>Agnathavasi</option>
                         <option>InstantFamily</option>
                         <option>ArvindhaSametha</option>
+                        <option>Aquaman</option>
                     </select>
                     <br>
                 </div>
@@ -67,8 +68,9 @@
                 <br>
                 <div class="form-group">
                     <label for="comment">Comment:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" name="comments"></textarea>
                 </div>
+                <input type="text" name="username" value="<%=user.username%>" hidden>
                 <br>
                 <button type="submit" class="btn btn-primary" style="float:center">submit</button>
         </div>

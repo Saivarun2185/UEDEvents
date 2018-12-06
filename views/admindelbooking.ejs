@@ -1,1 +1,54 @@
-<%include header %>
+<%include header.ejs%>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />
+</head>
+<body>
+    <h1 align="center">Booking Details</h1>
+
+    <%if(bookingslist[0].movie == ""){%>
+    <br>
+    <h3>No bookings found.</h3>
+    <%}%>
+
+    <table class="table" id="pull">
+        <thead>
+            <tr>
+            <th>S.NO</th>
+            <th>User Name</th>
+            <th>Movie Name</th>
+            <th>Date</th>
+            <th>Movie Timing</th>
+            <th>Total price</th>
+            <th>Reference ID</th>
+            
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <%for(let i = 0; i < bookingslist.length; i++){%>
+             <tr>
+                 
+                 <td><%=i+1%></td>
+                 <td><%= use[i].username%></td>
+                 <td><%=bookingslist[i].movie%></td>
+                 <td><%=bookingslist[i].date%></td>
+                 <td><%=bookingslist[i].timing%></td>
+                 <td><%=bookingslist[i].total%></td>
+                 <td><%=bookingslist[i]._id%></td>
+                 
+                 <form method="POST" action="/modifybookings">
+                    <input type="text" value="<%=bookingslist[i]._id%>" name="idmodify" hidden>
+                 <td><Input type="submit" class="btn btn-warning" value="Modify"></td>
+                 </form>
+                 <form method="POST" onsubmit="return confirm('Are you sure want to cancel booking?')" action="/BookingController/delete">
+                     <input type="text" value="<%=bookingslist[i]._id%>" name="id" hidden>
+                 <td><input type="submit" class="btn btn-danger" value="Cancel"></td>
+                </form>
+             </tr>   
+             <%}%>
+        </tbody>
+    </table>
+
+    
+</body>

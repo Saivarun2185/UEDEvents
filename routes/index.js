@@ -115,30 +115,43 @@ router.get('/adminadd', ensureAuthenticated, function (request, response) {
 });
 
 router.get('/admindelbooking', ensureAuthenticated, function (request, response) {
+    db.collection('users').find().toArray(function (err, result1) {
+    db.collection('bookings').find().toArray(function (err, result) {
+        if (err) throw err;
 
-    response.render('admindelbooking.ejs');
+        if (result.length == 0) {
+            result = emptyb;
+        }
+        console.log(result1)
+        response.render('admindelbooking.ejs', { use: result1, bookingslist: result });
+    })
+})
 
 });
 
 router.get('/admindelete', ensureAuthenticated, function (request, response) {
 
-    db.collection('movies').find().toArray(function (err, result) {
+    db.collection('addmovies').find().toArray(function (err, result) {
         if (err) throw err;
 
         if (result.length == 0) {
             result = emptym;
         }
-        console.log(result)
+        // console.log(result)
+        response.render('admindelete.ejs',{bookingslist: result});
     })
     
-    response.render('admindelete.ejs');
+    
 
 });
 
 router.get('/adminrating', ensureAuthenticated, function (request, response) {
 
-    response.render('adminrating.ejs');
+    db.collection('ratings').find().toArray(function (err, result) {
+        if (err) throw err;
+    response.render('adminrating.ejs', { ratingslist: result });
 
+});
 });
 
 router.get('/booking', ensureAuthenticated, function (request, response) {
@@ -186,9 +199,6 @@ router.post('/modifybookings', ensureAuthenticated, function (req, response) {
     })
 
 });
-
-
-
 
 module.exports = router;
 

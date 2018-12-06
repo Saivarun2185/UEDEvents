@@ -27,6 +27,7 @@ var Contact = require('./models/contact.js');
 var movies = require('./Controller/MovieController');
 var bookings = require('./Controller/BookingController');
 var addmovies = require('./Controller/AddmovieController');
+var ratings = require('./Controller/RatingController');
 
 var app = express();
 
@@ -136,6 +137,7 @@ app.use('/users', users);
 app.use('/MovieController', movies);
 app.use('/BookingController', bookings);
 app.use('/AddmovieController', addmovies);
+app.use('/RatingController', ratings);
 
 
 // if we get a 404 status, render 404.ejs view
