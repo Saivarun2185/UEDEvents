@@ -57,7 +57,7 @@ api.post('/delete', function (req, res) {
             from: 'gdp2.fastrack@gmail.com',
             to: req.body.email,
             subject: 'Ticket booking cancellation from vas theatres',
-            html: '<p>Hello,</p><p>We regret to inform you that you have cancelled your movie in vas theatres. </p>'+'Name:'+ req.body.fname +'<br>'+'Movie name:'+ req.body.mov +'<br>' +'Number of tickets booked:'+ req.body.quan +'<br>' +'Price:'+ req.body.tot +'<br>' +'Time:'+ req.body.time +'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
+            html: '<p>Hello,</p><p>We regret to inform you that you have cancelled your movie in vas theatres. </p>'+'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
           };
           
           transporter.sendMail(mailOptions, function (error, info) {
@@ -86,7 +86,7 @@ api.post('/bookingm',  function (req, res) {
         from: 'gdp2.fastrack@gmail.com',
         to: req.body.email,
         subject: 'Ticket booking modified from vas theatres',
-        html: '<p>Hello,</p><p>You have modified your booked ticket for a movie in vas theatres. </p>'+'Name:'+ req.body.fname +'<br>'+'Movie name:'+ req.body.mov +'<br>' +'Number of tickets booked:'+ req.body.quan +'<br>' +'Price:'+ req.body.tot +'<br>' +'Time:'+ req.body.time +'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
+        html: '<p>Hello,</p><p>You have modified your booked ticket for a movie in vas theatres.</p> '+'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
       };
       
       transporter.sendMail(mailOptions, function (error, info) {
