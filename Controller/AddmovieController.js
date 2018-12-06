@@ -28,7 +28,7 @@ api.post('/present',  function (req, res) {
         Model.create(newAddMovie, function (err, Movie) {
             if (err) throw err;
         });
-        return res.send("hello")
+        return res.redirect('/admindelete')
 });
 
 api.post('/delete', function (req, res) {

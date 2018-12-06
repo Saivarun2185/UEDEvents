@@ -3,6 +3,7 @@ const api = express.Router()
 const Model = require('../models/bookings')
 const mongoose = require('mongoose')
 const db = mongoose.connection;
+var nodemailer = require('nodemailer');
 var ObjectId = require('mongodb').ObjectID;
 
 api.post('/booking1',  function (req, res) {
@@ -44,6 +45,28 @@ api.post('/delete', function (req, res) {
 
     db.collection('bookings').deleteOne(query, function (err, result) {
         if (err) throw err;
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'gdp2.fastrack@gmail.com',
+              pass: 'gdp21234'
+            }
+          });
+        
+          var mailOptions = {
+            from: 'gdp2.fastrack@gmail.com',
+            to: req.body.email,
+            subject: 'Ticket booking cancellation from vas theatres',
+            html: '<p>Hello,</p><p>We regret to inform you that you have cancelled your movie in vas theatres. </p>'+'Name:'+ req.body.fname +'<br>'+'Movie name:'+ req.body.mov +'<br>' +'Number of tickets booked:'+ req.body.quan +'<br>' +'Price:'+ req.body.tot +'<br>' +'Time:'+ req.body.time +'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
+          };
+          
+          transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+        })
             return res.redirect('/mybookings')
     });
 })
@@ -51,7 +74,28 @@ api.post('/delete', function (req, res) {
 api.post('/bookingm',  function (req, res) {
 
     db.collection('bookings').update({ '_id': ObjectId(req.body.userID) }, { $set: { 'timing': req.body.timing, 'name': req.body.firstname, 'email': req.body.email, 'quantity': req.body.quantity, 'price': req.body.price, 'total': req.body.total, 'date': req.body.date } });
-
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'gdp2.fastrack@gmail.com',
+          pass: 'gdp21234'
+        }
+      });
+    
+      var mailOptions = {
+        from: 'gdp2.fastrack@gmail.com',
+        to: req.body.email,
+        subject: 'Ticket booking modified from vas theatres',
+        html: '<p>Hello,</p><p>You have modified your booked ticket for a movie in vas theatres. </p>'+'Name:'+ req.body.fname +'<br>'+'Movie name:'+ req.body.mov +'<br>' +'Number of tickets booked:'+ req.body.quan +'<br>' +'Price:'+ req.body.tot +'<br>' +'Time:'+ req.body.time +'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
+      };
+      
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+    })
             return res.redirect('/mybookings')
 
 });

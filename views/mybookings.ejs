@@ -39,7 +39,8 @@
                  </form>
                  <form method="POST" onsubmit="return confirm('Are you sure want to cancel booking?')" action="/BookingController/delete">
                      <input type="text" value="<%=bookingslist[i]._id%>" name="id" hidden>
-                 <td><input type="submit" class="btn btn-danger" value="Cancel"></td>
+                     <input type="text" value="<%=bookingslist[i].email%>" name="email" hidden >
+                 <td><button type="submit" class="btn btn-danger" value="Cancel">Cancel</button></td>
                 </form>
              </tr>   
              <%}%>

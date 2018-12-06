@@ -86,16 +86,17 @@ app.post("/payment", function(req,res){
     from: 'gdp2.fastrack@gmail.com',
     to: req.body.email1,
     subject: 'Ticket booking confirmation from vas theatres',
-    html: '<p>Hello,</p><p>You have successfully booked ticket for a movie in vas theatres </p>'  + '<p>Thanks&Regards</p><p>conference team</p> ',
+    html: '<p>Hello,</p><p>You have successfully booked ticket for a movie in vas theatres. </p>'+'Name:'+ req.body.fname +'<br>'+'Movie name:'+ req.body.mov +'<br>' +'Number of tickets booked:'+ req.body.quan +'<br>' +'Price:'+ req.body.tot +'<br>' +'Time:'+ req.body.time +'<br>' + '<p>Thanks&Regards</p><p>VAS Theatres</p> ',
   };
-  console.log(req.body.email1);
+  
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
-      // res.redirect('/faculty');
-      res.send("sucess")
+      
+      res.redirect('/home');
+      
     }
   });
 })

@@ -1,7 +1,92 @@
-<head>
-    <title>VAS Movies</title>
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
-</head>
-<body>
-    Homepage
+
+
+
+    <head>
+        <title>VAS Movies</title>
+        <link href="../css/home.css" type="text/css" rel="stylesheet" />
+    </head>
+    <h1>WELCOME TO VAS THEATRES</h1>
+    <img src="../css/Teamlogo.jpg" width="200" height="200" align="middle">
+    <style>
+        img {
+            width: 220px;
+            height: 220px;
+        }
+
+        th {
+            font-size: 2em;
+            background-color: black;
+            padding: 20px;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        table {
+            background-color: white;
+            width: 60%;
+        }
+
+        td {
+            padding: 25px;
+        }
+
+        .textimage {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            float: left;
+            background-size: 100%;
+            background-position: center;
+            margin: 4px;
+            background-size: 100%;
+            transition: 0.5s;
+            text-align: left;
+        }
+
+        .textimage:hover {
+            background-size: 110%;
+        }
+
+        .textimage:after {
+            position: absolute;
+            top: 90%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            white-space: pre-wrap;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0, 3);
+            color: #fff;
+            padding: 0 8px;
+            content: attr(data-text);
+            transition: 0.5s;
+        }
+
+        .textimage:hover:after {
+
+            top: 0;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0, 6);
+        }
+
+        .textimage:first-line {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    </body>
+    </table>
+   
 </body>
