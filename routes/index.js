@@ -125,8 +125,11 @@ router.get('/admindelete', ensureAuthenticated, function (request, response) {
 
 router.get('/adminrating', ensureAuthenticated, function (request, response) {
 
-    response.render('adminrating.ejs');
+    db.collection('ratings').find().toArray(function (err, result) {
+        if (err) throw err;
+    response.render('adminrating.ejs', { ratingslist: result });
 
+});
 });
 
 router.get('/booking', ensureAuthenticated, function (request, response) {
@@ -174,9 +177,6 @@ router.post('/modifybookings', ensureAuthenticated, function (req, response) {
     })
 
 });
-
-
-
 
 module.exports = router;
 
