@@ -102,6 +102,12 @@ router.get('/adminadd', ensureAuthenticated, function (request, response) {
 
 });
 
+router.get('/Aquaman', ensureAuthenticated, function (request, response) {
+
+    response.render('Aquamanpage.ejs');
+
+});
+
 router.get('/admindelbooking', ensureAuthenticated, function (request, response) {
     db.collection('users').find().toArray(function (err, result1) {
     db.collection('bookings').find().toArray(function (err, result) {
