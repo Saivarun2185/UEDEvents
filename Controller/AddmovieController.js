@@ -3,6 +3,7 @@ const api = express.Router()
 const Model = require('../models/addmovie')
 const mongoose = require('mongoose')
 const db = mongoose.connection;
+var ObjectId = require('mongodb').ObjectID;
 
 api.post('/present',  function (req, res) {
     
@@ -29,5 +30,14 @@ api.post('/present',  function (req, res) {
         });
         return res.send("hello")
 });
+
+api.post('/delete', function (req, res) {
+    var query = { "_id": ObjectId(req.body.id) };
+
+    db.collection('addmovies').deleteOne(query, function (err, result) {
+        if (err) throw err;
+            return res.redirect('/admindelete')
+    });
+})
 
 module.exports = api;
