@@ -90,6 +90,18 @@ router.get('/instantfamily', ensureAuthenticated, function (request, response) {
 
 });
 
+router.get('/Nowplaying', ensureAuthenticated, function (request, response) {
+    
+        response.render('instantfamilypage.ejs');
+    
+    });
+
+    router.get('/Comingsoon', ensureAuthenticated, function (request, response) {
+        
+            response.render('instantfamilypage.ejs');
+        
+        });
+
 router.get('/Aravindasametha', ensureAuthenticated, function (request, response) {
 
     response.render('AravindaSamethapage.ejs');
